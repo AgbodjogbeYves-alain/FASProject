@@ -13,26 +13,31 @@ int main(void)
 	
 	int PIN1 = 5;
 	int PIN2 = 4;// Capteur branché sur le port D4 (digital 4)
-	
-	int PINSOUND = 0;
+
 	
 	int distance = 50;
 	int data1,data2;
 	int nbpersonne =0;
-	int value=0;
-	int seuil =0;
-
 	while(1) // boucle infinie
 	{
 	 
-	 // LECTURE DES DISTANCES DU CAPTEURS ULTRASON N1
+	
 	  write_block(us_cmd,PIN1,0,0);
 	  pi_sleep(200);
 	  read_byte();
 	  read_block();
 	  data1=r_buf[1]* 256 + r_buf[2];
 	 
+/*	 printf("data1 =%d\n",data1);
 
+	 write_block(us_cmd,PIN2,0,0);
+	 pi_sleep(200);
+	 read_byte();
+	 read_block();
+	 data2=r_buf[1]*256 + r_buf[2];
+
+	printf("data2 = %d\n",data2);
+	printf("\n");*/
 
 	  
 	  if (data1 < distance)
@@ -92,31 +97,17 @@ int main(void)
                         printf("Une personne vient de sortir\n");
                         printf("Nombre de personne : %d\n",nbpersonne);
                         data1=distance;
-			
+			pi_sleep(500);
 
                 }
                 else
                 {
 			 printf("la personne a fait demi tour avant de sortir \n");
-                        
+                         pi_sleep(500);
                 }
           }
-	value = analogRead(PINSOUND);
-	seuil = nbpersonne *30;
-	printf("seuil en decibel = %d\n",seuil);
-
-	if (value > seuil)
-	{
-	 printf("Sensor value = %d\n",value);
-	 printf(" FERMEZ VOS GUEULES !\n");
-        }
-	else
-	{
-	printf("Sensor value = %d\n", value);
-	printf("Niveaux sonore ok");
-	}
-
-	pi_sleep(500);	  	
+	 
+	  	
 
 	   
 	}

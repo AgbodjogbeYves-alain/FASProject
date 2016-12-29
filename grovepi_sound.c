@@ -12,7 +12,7 @@ int main(void)
     exit(1);
 
   // Capteur de son sur le port A0 en lecture
-  int PIN = 0;
+  int PIN = 1;
   pinMode(PIN,0);
 
   // LED sur le port D5 en écriture
