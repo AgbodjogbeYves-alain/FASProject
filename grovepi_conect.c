@@ -23,9 +23,9 @@ void send_search_broadcast():
      struct ip_mreq mreq;
      char *msg="M-SEARCH * HTTP/1.1\r\n";
      strcat(msg, "HOST: 239.255.255.250:1982\r\n");
-  	 strcat(msg,"MAN: \"ssdp:discover\"\r\n");
-  	 strcat(msg,"ST: wifi_bulb");
-  	 debug("send search request")
+     strcat(msg,"MAN: \"ssdp:discover\"\r\n");
+     strcat(msg,"ST: wifi_bulb");
+     debug("send search request");
      /* create what looks like an ordinary UDP socket */
      if ((fd=socket(AF_INET,SOCK_DGRAM,0)) < 0) {
 	  perror("socket");
@@ -47,7 +47,7 @@ void send_search_broadcast():
 	  sleep(1);
      }
 }
-
+/*
 void listner(){
 
 	 struct sockaddr_in addr;
@@ -103,7 +103,10 @@ void listner(){
 	  puts(message);
 	}
 }
+*/
+
 int main(void){
+/*
 
 	SOCKET sock = socket(AF_INET, SOCK_STREAM, 0);
 	int flag = fcntl(socket,F_SETFL, O_NONBLOCK);
@@ -129,5 +132,7 @@ int main(void){
 	  	scan_socket.sendto(msg, multicase_address)
 	}
 	
-
+*/
+	send_search_broadcast();
+	return 1;	
 }
