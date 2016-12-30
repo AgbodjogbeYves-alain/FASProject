@@ -8,7 +8,7 @@
 
 
 int main(){
-	PyObject *module,*function,*argument,*retour;
+	PyObject *module,*fonction,*arguments,*retour;
 	Py_Initialize(); 
 	PySys_SetPath(".");
 	module = PyImport_ImportModule("cli");
