@@ -1,20 +1,18 @@
-#include <Python.h>
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h> /* close */
 #include <netdb.h> /* gethostbyname */
 
 
 int main(){
-	PyObject *module,*fonction,*arguments,*retour;
+	/*PyObject *module,*fonction,*arguments,*retour;
 	Py_Initialize(); 
 	PySys_SetPath(".");
 	module = PyImport_ImportModule("cli");
 	fonction = PyObject_GetAttrString(module, "turn");
 	arguments = Py_BuildValue("(s)", "on");
-	retour = PyEval_CallObject(fonction, arguments);
-	Py_Finalize(); 
+	PyEval_CallObject(fonction, arguments);
+	Py_Finalize();*/
+	system("yee --ip=192.168.0.13 turn on");
 	return 0;
 }
