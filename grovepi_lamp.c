@@ -13,6 +13,6 @@ int main(){
 	arguments = Py_BuildValue("(s)", "on");
 	PyEval_CallObject(fonction, arguments);
 	Py_Finalize();*/
-	system("yee --ip=192.168.0.13 turn on");
+	system("yee --ip=192.168.0.20 turn on");
 	return 0;
 }
