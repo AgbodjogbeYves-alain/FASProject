@@ -7,22 +7,22 @@
 void change_color(int cmd,char ip[]){
 	//char commande[256];
 	char set_on[256];
+	int increment=60;
+	char new_color[256];
 	//char ip_bulb[] = ip;
 	sprintf(set_on,"yee --ip=%s turn on",ip);
 	system(set_on);
 
-	/*if(cmd == 1){
-
+	if(cmd == 1){
+		increment-=5;
+		sprintf(new_color,"yee --ip=%s hsv(%d,100)",ip,increment);
+		system(new_color);
 	}
 	else if(cmd==2){
-
+		increment-=5;
+		sprintf(new_color,"yee --ip=%s hsv(%d,100)",ip,increment);
+		system(new_color);
 	}
-	else if(cmd==3){
-
-	}
-	else if (cmd==4){
-
-	}*/
 }
 
 int main(){
@@ -36,6 +36,6 @@ int main(){
 	PyEval_CallObject(fonction, arguments);
 	Py_Finalize();*/
 	//system("yee --ip=192.168.0.20 turn on");
-	change_color(0,"192.168.43.167");
+	change_color(0,"192.168.43.3");
 	return 0;
 }
