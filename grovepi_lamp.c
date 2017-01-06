@@ -5,11 +5,11 @@
 
 
 void change_color(int cmd,char ip[]){
-	char commande[256];
+	//char commande[256];
 	char set_on[256];
-	char ip_bulb[] = ip;
-	sprintf(on,"yee --ip=%s turn on",ip);
-	system(on);
+	//char ip_bulb[] = ip;
+	sprintf(set_on,"yee --ip=%s turn on",ip);
+	system(set_on);
 
 	/*if(cmd == 1){
 
