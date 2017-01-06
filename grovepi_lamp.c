@@ -10,7 +10,8 @@ void change_color(int cmd,char[] ip){
 	char ip_bulb[] = ip;
 	sprintf(on,"yee --ip=%s turn on",ip);
 	system(on);
-	if(cmd == 1){
+
+	/*if(cmd == 1){
 
 	}
 	else if(cmd==2){
@@ -21,7 +22,7 @@ void change_color(int cmd,char[] ip){
 	}
 	else if (cmd==4){
 
-	}
+	}*/
 }
 
 int main(){
@@ -35,6 +36,6 @@ int main(){
 	PyEval_CallObject(fonction, arguments);
 	Py_Finalize();*/
 	//system("yee --ip=192.168.0.20 turn on");
-	change_color;
+	change_color(0,"192.168.43.167");
 	return 0;
 }
