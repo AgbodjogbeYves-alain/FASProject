@@ -57,7 +57,7 @@ int main(){
 					increment -= 10; 
 				} 
 				change_color(increment,0,ip);
-				wait(0.1);
+				Wait(0.1);
 			}
 		}
 
@@ -69,7 +69,7 @@ int main(){
 				}
 				
 				change_color(increment,1,ip);
-				wait(0.1);
+				Wait(0.1);
 			}
 			volume_actuel = db;
 		}
