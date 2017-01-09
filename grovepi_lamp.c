@@ -21,7 +21,7 @@ void change_color(int cmd,char ip[]){
 	}
 	else if(cmd==1){
 		increment-=5;
-		sprintf(new_color,"yee --ip=%s hsv %d 100 ",ip,increment);
+		sprintf(new_color,"yee --ip=%s hsv %d 100",ip,increment);
 		system(new_color);
 	}
 }
