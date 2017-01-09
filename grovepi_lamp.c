@@ -65,7 +65,7 @@ int main(){
 			volume_actuel = db;
 		}
 
-			system("yee --ip=192.168.43.167 turn ofsf");
+			//system("yee --ip=192.168.43.167 turn off");
 
 	}
 	return 0;
