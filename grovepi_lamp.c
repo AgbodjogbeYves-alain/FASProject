@@ -38,5 +38,6 @@ int main(){
 	Py_Finalize();*/
 	//system("yee --ip=192.168.0.20 turn on");
 	change_color(0,"192.168.43.167");
+	system("yee --ip=192.168.0.20 turn off");
 	return 0;
 }
