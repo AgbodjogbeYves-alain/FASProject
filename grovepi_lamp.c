@@ -54,10 +54,11 @@ int main(){
 			while (db-volume_actuel > 50 ){
 				volume_actuel += 50;
 				if(increment-10 >0){
-					increment -= 10; 
+					for(i=0;i<10;i++){
+						increment -= 1;
+						change_color(increment,0,ip);
+					}
 				} 
-				change_color(increment,0,ip);
-				sleep(2);
 			}
 		}
 
@@ -65,7 +66,10 @@ int main(){
 			while (volume_actuel-db > 50 ){
 				volume_actuel -= 50;
 				if(increment+10 <60){
-					increment += 10; 
+					for(i=0;i<10;i++){
+						increment += 1;
+						change_color(increment,0,ip);
+					}
 				}
 				
 				change_color(increment,1,ip);
