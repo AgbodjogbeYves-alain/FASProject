@@ -39,16 +39,16 @@ int main(){
 	int volume_actuel = 0;
 	//int volumepers = 50;
 	int increment = 60;
-	int nbpers=0;
+	//int nbpers=0;
 	char ip[256];
 	int db;
-	printf("Entrez l'ip de la lampe");
+	printf("Entrez l'ip de la lampe\n");
 	scanf("%s",ip);
 	while(1){
-		printf("Entrez le volume sonore ambiant"); // a remplacer pr les valeurs du capteur sonore ou du nombre de personne * 50
+		printf("Entrez le volume sonore ambiant\n"); // a remplacer pr les valeurs du capteur sonore ou du nombre de personne * 50
 		scanf("%d",&db);
-		printf("Entrez le nombre de personne dans la salle"); //a remplacer par les valeurs du capteur ultason
-		scanf("%d",&nbpers);
+		printf("Entrez le volume precedent dans la salle\n"); //a remplacer par les valeurs du capteur ultason
+		scanf("%d",&volume_actuel);
 		
 		if (db>volume_actuel && db-volume_actuel>50){
 			while (db-volume_actuel > 50 ){
