@@ -6,6 +6,7 @@
 
 void change_color(int cmd,char ip[]){
 	//char commande[256];
+
 	char set_on[256];
 	int increment=60;
 	char new_color[256];
@@ -13,12 +14,12 @@ void change_color(int cmd,char ip[]){
 	sprintf(set_on,"yee --ip=%s turn on",ip);
 	system(set_on);
 
-	if(cmd == 1){
+	if(cmd == 0){
 		increment-=5;
 		sprintf(new_color,"yee --ip=%s hsv(%d,100)",ip,increment);
 		system(new_color);
 	}
-	else if(cmd==2){
+	else if(cmd==1){
 		increment-=5;
 		sprintf(new_color,"yee --ip=%s hsv(%d,100)",ip,increment);
 		system(new_color);
