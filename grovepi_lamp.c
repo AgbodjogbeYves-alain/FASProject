@@ -37,11 +37,11 @@ int main(){
 	PyEval_CallObject(fonction, arguments);
 	Py_Finalize();*/
 	//system("yee --ip=192.168.0.20 turn on");
-	printf("Entrez l'ip du ")
+	printf("Entrez l'ip du ");
 	char ips[] = scanf("%s",&ip);
 
 	change_color(0,ips);
-	
+
 	system("yee --ip=192.168.43.167 turn off");
 	return 0;
 }
