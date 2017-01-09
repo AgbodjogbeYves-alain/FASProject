@@ -44,10 +44,10 @@ int main(){
 	int db;
 	printf("Entrez l'ip de la lampe");
 	scanf("%s",ip);
-	while(true){
+	while(1){
 		printf("Entrez le volume sonore ambiant"); // a remplacer pr les valeurs du capteur sonore ou du nombre de personne * 50
 		scanf("%d",&db);
-		print("Entrez le nombre de personne dans la salle"); //a remplacer par les valeurs du capteur ultason
+		printf("Entrez le nombre de personne dans la salle"); //a remplacer par les valeurs du capteur ultason
 		scanf("%d",&nbpers);
 		
 		if (db>volume_actuel && db-volume_actuel>50){
