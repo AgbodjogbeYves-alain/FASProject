@@ -37,9 +37,9 @@ int main(){
 	PyEval_CallObject(fonction, arguments);
 	Py_Finalize();*/
 	//system("yee --ip=192.168.0.20 turn on");
-	char ip[];
+	char ip[256];
 	printf("Entrez l'ip du ");
-	scanf("%s",&ip);
+	scanf("%s",ip);
 
 	change_color(0,ip);
 
