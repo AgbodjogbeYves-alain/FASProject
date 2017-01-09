@@ -44,6 +44,7 @@ int main(){
 	int db;
 	printf("Entrez l'ip de la lampe\n");
 	scanf("%s",ip);
+	int i =0;
 	while(1){
 		printf("Entrez le volume sonore ambiant\n"); // a remplacer pr les valeurs du capteur sonore ou du nombre de personne * 50
 		scanf("%d",&db);
