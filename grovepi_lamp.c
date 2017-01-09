@@ -56,7 +56,7 @@ int main(){
 				volume_actuel += 50;
 				if(increment-10 >0){
 					while(i<10){
-						increment -=4
+						increment -=4;
 						change_color(increment,0,ip);
 						i+=4;
 					}
@@ -69,7 +69,7 @@ int main(){
 				volume_actuel -= 50;
 				if(increment+10 <60){
 					while(i<10){
-						increment +=4
+						increment +=4;
 						change_color(increment,0,ip);
 						i+=4;
 					}
