@@ -41,7 +41,7 @@ int main(){
 	printf("Entrez l'ip du ");
 	scanf("%s",&ip);
 
-	change_color(0,ips);
+	change_color(0,ip);
 
 	system("yee --ip=192.168.43.167 turn off");
 	return 0;
