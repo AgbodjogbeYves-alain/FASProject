@@ -53,6 +53,7 @@ int main(){
 		if (db>volume_actuel && db-volume_actuel>50){
 			while (db-volume_actuel > 50 ){
 				volume_actuel += 50;
+				increment -= 10; 
 				change_color(increment,0,ip);
 			}
 		}
@@ -60,6 +61,7 @@ int main(){
 		if (db<volume_actuel && volume_actuel-db > 50){
 			while (volume_actuel-db > 50 ){
 				volume_actuel -= 50;
+				increment -= 10; 
 				change_color(increment,1,ip);
 			}
 			volume_actuel = db;
