@@ -58,7 +58,7 @@ int main(){
 					while(i<10){
 						increment -=4
 						change_color(increment,0,ip);
-						i+=4
+						i+=4;
 					}
 				} 
 			}
