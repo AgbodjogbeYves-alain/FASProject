@@ -37,7 +37,7 @@ int main(){
 	Py_Finalize();*/
 	//system("yee --ip=192.168.0.20 turn on");
 	int volume_actuel = 0;
-	int volumepers = 50;
+	//int volumepers = 50;
 	int increment = 60;
 	int nbpers=0;
 	char ip[256];
