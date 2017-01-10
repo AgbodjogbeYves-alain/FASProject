@@ -58,7 +58,7 @@ int main(){
 					while(i<10){
 						increment -=2;
 						change_color(increment,0,ip);
-						i++;
+						i+=2;
 					}
 						
 				}
@@ -72,7 +72,7 @@ int main(){
 					while(i<10){
 						increment +=2;
 						change_color(increment,0,ip);
-						i++;
+						i+=2;
 					}
 				}
 			}
