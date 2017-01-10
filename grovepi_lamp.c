@@ -55,27 +55,34 @@ int main(){
 			while (db-volume_actuel > 50 ){
 				volume_actuel += 50;
 				if(increment-10 >0){
-						increment -=10;
+					while(i<10){
+						increment -=2;
 						change_color(increment,0,ip);
+						i++;
 					}
-				} 
+						
+				}
+			} 
 		}
 
 		if (db<volume_actuel && volume_actuel-db > 50){
 			while (volume_actuel-db > 50 ){
 				volume_actuel -= 50;
 				if(increment+10 <60){
-						increment +=10;
+					while(i<10){
+						increment +=2;
 						change_color(increment,0,ip);
-						i+=4;
+						i++;
+					}
 				}
 			}
 			volume_actuel = db;
 		}
 
 			//system("yee --ip=192.168.43.167 turn off");
-		return 0;
+
 
 	}
+	return 0;
 	
 }
