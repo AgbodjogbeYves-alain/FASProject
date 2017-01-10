@@ -53,7 +53,7 @@ int main(){
 		
 		if (db>volume_actuel && db-volume_actuel>50){
 			while (db-volume_actuel > 50 ){
-				if(increment-10=>0){
+				if(increment-10>=0){
 					while(i<10){
 						increment -=2;
 						change_color(increment,0,ip);
