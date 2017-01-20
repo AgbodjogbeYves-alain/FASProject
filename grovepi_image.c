@@ -65,53 +65,55 @@ int main(){
 	//scanf("%s",ip);
 	int commande = 0;
 	int i =0;
-	printf("Entrez le volume sonore ambiant\n");
-	scanf("%d",&volumeactuel);
-	printf("Entrez le volume precedent de la salle\n");
-	scanf("%d",&volumeprecedent);
-	commande = definirCouleur(volumeactuel,volumeprecedent,seuil_db);
-	change_image(commande);
-	/*while(1){
-		printf("Entrez le volume sonore ambiant\n"); // a remplacer pr les valeurs du capteur sonore ou du nombre de personne * 50
-		scanf("%d",&db);
-		printf("Entrez le volume precedent dans la salle\n"); //a remplacer par les valeurs du capteur ultason
-		scanf("%d",&volume_actuel);
-		
-		if (db>volume_actuel && db-volume_actuel>50){
-			while (db-volume_actuel > 50 ){
-				
-				if(increment-10>=0){
-					while(i<10){
-						increment -=2;
-						change_color(increment,0,ip);
-						i+=2;
-					}
-						
-				}
-				volume_actuel += 50;
-			} 
-		}
-
-		if (db<volume_actuel && volume_actuel-db > 50){
-			while (volume_actuel-db > 50 ){
-				volume_actuel -= 50;
-				if(increment+10 <=60){
-					while(i<10){
-						increment +=2;
-						change_color(increment,0,ip);
-						i+=2;
-					}
-				}
-				volume_actuel -= 50;
-			}
+	while(1){
+		printf("Entrez le volume sonore ambiant\n");
+		scanf("%d",&volumeactuel);
+		printf("Entrez le volume precedent de la salle\n");
+		scanf("%d",&volumeprecedent);
+		commande = definirCouleur(volumeactuel,volumeprecedent,seuil_db);
+		change_image(commande);
+		/*while(1){
+			printf("Entrez le volume sonore ambiant\n"); // a remplacer pr les valeurs du capteur sonore ou du nombre de personne * 50
+			scanf("%d",&db);
+			printf("Entrez le volume precedent dans la salle\n"); //a remplacer par les valeurs du capteur ultason
+			scanf("%d",&volume_actuel);
 			
-		}
+			if (db>volume_actuel && db-volume_actuel>50){
+				while (db-volume_actuel > 50 ){
+					
+					if(increment-10>=0){
+						while(i<10){
+							increment -=2;
+							change_color(increment,0,ip);
+							i+=2;
+						}
+							
+					}
+					volume_actuel += 50;
+				} 
+			}
 
-		volume_actuel = db;
-			//system("yee --ip=192.168.43.167 turn off");
+			if (db<volume_actuel && volume_actuel-db > 50){
+				while (volume_actuel-db > 50 ){
+					volume_actuel -= 50;
+					if(increment+10 <=60){
+						while(i<10){
+							increment +=2;
+							change_color(increment,0,ip);
+							i+=2;
+						}
+					}
+					volume_actuel -= 50;
+				}
+				
+			}
+
+			volume_actuel = db;
+				//system("yee --ip=192.168.43.167 turn off");
 
 
-	}*/
+		}*/
+	}
 	return 0;
 	
 }
