@@ -6,7 +6,7 @@
 
 void change_image(int commande){
 	char new_image[256];
-	sprintf(new_image,"eag imageColor_%d.jpeg --maximized",commande);
+	sprintf(new_image,"eog --fullscreen imageColor_%d.png &",commande);
 	system(new_image);
 
 }
@@ -32,19 +32,21 @@ void change_color(int increment,int cmd,char ip[]){
 }
 
 int definirCouleur(int actu,int prec, int limitH){
-	int p = prec;
-	int a = actu;
-	int commande = 0;
-	if(p<a && commande < limitH){
+	int p = prec; // le volume enregistré précedemment
+	int a = actu; // Le volume envoyé a l'instant par le capteur
+	int commande = 0; //La commande
+	if(p<a && p < limitH){ //Si le volume precedemment enregistré est inferieur au volume enregistré a l'instant
 
-		while(p < a && commande < limitH) {
-			commande+=8;
+		while(p < a && p < limitH) { //On a 10 images et on fixe la limite du volume a 500mdb. Donc a chaque changement de 50 decibels on change d'image
+			commande+=1;
+			p+=50;
 		}
 	}
 		
-	else if(p>a && commande > limitB){
-		while(p>a && commande > limitB) {
-			commande-=8;
+	else if(p>a && p > 0){
+		while(p>a && p > 0) {
+			p-=50;
+			commande-=1;
 		}
 	}
 	return commande;
@@ -67,12 +69,18 @@ int main(){
 	int increment = 60;
 	//int nbpers=0;
 	char ip[256];
-	int volumeprecedent;
-	printf("Entrez l'ip de la lampe\n");
-	scanf("%s",ip);
+	int volumeprecedent=0;
+	//printf("Entrez l'ip de la lampe\n");
+	//scanf("%s",ip);
 	int i =0;
-	commande = definirCouleur(volumeactuel,volumeprecedent,60,0);
+	system(new_image);
+	printf("Entrez le volume sonore ambiant\n");
+	scanf("%d",&volumeactuel);
+	printf("Entrez le volume precedent de la salle\n");
+	scanf("%d",&volumeprecedent);
+	commande = definirCouleur(volumeactuel,volumeprecedent,500);
 	change_image(commande);
+	return 0;
 	/*while(1){
 		printf("Entrez le volume sonore ambiant\n"); // a remplacer pr les valeurs du capteur sonore ou du nombre de personne * 50
 		scanf("%d",&db);
