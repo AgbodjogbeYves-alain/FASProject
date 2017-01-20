@@ -6,7 +6,6 @@
 
 
 int main(){
-	system("export DISPLAY=:0");
 	system("eog --fullscreen carre_rouge.1240723866.thumbnail.png &");
 	sleep(3);
 	system("eog --fullscreen invisible.png &");
