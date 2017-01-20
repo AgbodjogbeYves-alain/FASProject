@@ -73,7 +73,6 @@ int main(){
 	//printf("Entrez l'ip de la lampe\n");
 	//scanf("%s",ip);
 	int i =0;
-	system(new_image);
 	printf("Entrez le volume sonore ambiant\n");
 	scanf("%d",&volumeactuel);
 	printf("Entrez le volume precedent de la salle\n");
