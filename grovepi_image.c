@@ -54,15 +54,6 @@ int definirCouleur(int actu,int prec, int limitH){
 
 int main(){
 
-	/*PyObject *module,*fonction,*arguments,*retour;
-	Py_Initialize(); 
-	PySys_SetPath(".");
-	module = PyImport_ImportModule("cli");
-	fonction = PyObject_GetAttrString(module, "turn");
-	arguments = Py_BuildValue("(s)", "on");
-	PyEval_CallObject(fonction, arguments);
-	Py_Finalize();*/
-	//system("yee --ip=192.168.0.20 turn on");
 	int seuil_db = 500;
 	int volumeactuel = 0;
 	//int volumepers = 50;
