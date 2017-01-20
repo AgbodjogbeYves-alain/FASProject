@@ -6,11 +6,7 @@
 
 
 int main(){
-	while(1)
-	{
 	system("export DISPLAY=:0");
 	system("eog --fullscreen carre_rouge.1240723866.thumbnail.png &");
 	system("eog --fullscrenn invisible.png &");
-	}
-	return 0;
 }
