@@ -11,32 +11,60 @@ void change_image(int commande){
 
 }
 
-int definirCouleur(int actu,int prec, int limitH){
+int definirCouleur(int actu){
 	int p = prec; // le volume enregistré précedemment
 	int a = actu; // Le volume envoyé a l'instant par le capteur
 	int commande = 0; //La commande
-	if(p<a && a-p>=limitH/10){ //Si le volume precedemment enregistré est inferieur au volume enregistré a l'instant
+	int personne = 50;
+	int seuil_0 = personne;
+	int seuill_1 = personne * 2;
+	int seuill_2 = personne * 4;
+	int seuill_3 = personne * 6;
+	int seuill_4 = personne * 8;
+	int seuill_5 = personne * 10;
+	int seuill_6 = personne * 12;
+	int seuill_7 = personne * 14;
+	int seuill_8 = personne * 16;
+	int seuill_9 = personne * 18;
+	int seuill_10 = personne * 20;
 
-		while(p < a && commande<10 ) { //On a 10 images et on fixe la limite du volume a 500mdb. Donc a chaque changement de 50 decibels on change d'image
-			commande+=1;
-			p+=50;
-		}
+	if(a>seuil_0){
+		return 0;
 	}
-		
-	else if(p>=a && p-a>limitH/10){
-		while(p>a && p > 0 && commande>0) {
-			p-=50;
-			commande-=1;
-		}
+	else if(a>seuil1){
+		return 1;
 	}
-	return commande;
+	else if(a>seuil2){
+		return 2;
+	}
+	else if(a>seuil3){
+		return 3;
+	}
+	else if(a>seuil4){
+		return 4;
+	}
+	else if(a>seuil5){
+		return 5;
+	}
+	else if(a>seuil6){
+		return 6;
+	}
+	else if(a>seuil7){
+		return 7;
+	}
+	else if(a>seuil8){
+		return 8;
+	}
+	else if(a>seuil9){
+		return 9;
+	}
+	else if(a>seuil10){
+		return 10;
+	}
 }
 
 int main(){
 
-	int nbpers=5;
-	int seuil_db = 100 * nbpers;
-	int volumeprecedent=0;
 	int commande = 1;
 	int commandeprec = 1;
 	//Exit on failure to start communications with the GrovePi
@@ -52,14 +80,11 @@ int main(){
 
 		value = analogRead(PIN);
 		printf("Sensor value = %d\n", value);
-		commande = definirCouleur(value,volumeprecedent,seuil_db);
-		if (commandeprec != commande && commande>=1){
-			printf("%d ",commande);
+		commande = definirCouleur(value);
+		if (commandeprec != commande){
 			commandeprec = commande;
 			change_image(commande);
 		}
-
-		volumeprecedent = value;
 		sleep(5);
 		
 	
