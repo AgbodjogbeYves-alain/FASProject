@@ -11,8 +11,8 @@ int main(void)
 	if(init()==-1)
 		exit(1);
 	
-	int PIN1 = 2;
-	int PIN2 = 3;// Capteur branché sur le port D4 (digital 4)
+	int PIN1 = 2; // Capteur branché sur le port D2 (digital 2)
+	int PIN2 = 3;// Capteur branché sur le port D3 (digital 3)
 
 	
 	int distance = 50;
@@ -21,28 +21,21 @@ int main(void)
 	while(1) // boucle infinie
 	{
 	 
-	
+	 // Lecture de la distance sur le premier capteur 
 	  write_block(us_cmd,PIN1,0,0);
 	  pi_sleep(200);
 	  read_byte();
 	  read_block();
 	  data1=r_buf[1]* 256 + r_buf[2];
 	 
-/*	 printf("data1 =%d\n",data1);
 
-	 write_block(us_cmd,PIN2,0,0);
-	 pi_sleep(200);
-	 read_byte();
-	 read_block();
-	 data2=r_buf[1]*256 + r_buf[2];
 
-	printf("data2 = %d\n",data2);
-	printf("\n");*/
-
-	  
+	  // Si la distance lu par ce capteur est inferieur a la distance entre le capteur et le mur face au capteur
+	   //>>>> detection d'un individu entre le capteur et le mur d'en face  
 	  if (data1 < distance)
 	  {	
-		pi_sleep(100);
+
+		pi_sleep(200);
 		data1=distance;
 		write_block(us_cmd,PIN2,0,0);
 		pi_sleep(200);
@@ -80,7 +73,7 @@ int main(void)
 
 	if (data2 < distance)
           {
-                pi_sleep(100);
+                pi_sleep(200);
 				data2=distance;
                 write_block(us_cmd,PIN1,0,0);
 				pi_sleep(200);
