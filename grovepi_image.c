@@ -10,42 +10,22 @@ void change_image(int commande){
 	system(new_image);
 
 }
-void change_color(int increment,int cmd,char ip[]){
-	//char commande[256];
-
-	char set_on[256];
-	char new_color[256];
-	//char ip_bulb[] = ip;
-	sprintf(set_on,"yee --ip=%s turn on",ip);
-	system(set_on);
-
-	if(cmd == 0){
-		increment-=5;
-		sprintf(new_color,"yee --ip=%s hsv %d 100",ip,increment);
-		system(new_color);
-	}
-	else if(cmd==1){
-		increment+=5;
-		sprintf(new_color,"yee --ip=%s hsv %d 100",ip,increment);
-		system(new_color);
-	}
-}
 
 int definirCouleur(int actu,int prec, int limitH){
 	int p = prec; // le volume enregistré précedemment
 	int a = actu; // Le volume envoyé a l'instant par le capteur
 	int commande = 0; //La commande
-	if(p<a && p < limitH && a-p>10){ //Si le volume precedemment enregistré est inferieur au volume enregistré a l'instant
+	if(p<a && p < limitH && a-p>50){ //Si le volume precedemment enregistré est inferieur au volume enregistré a l'instant
 
 		while(p < a && p < limitH) { //On a 10 images et on fixe la limite du volume a 500mdb. Donc a chaque changement de 50 decibels on change d'image
 			commande+=1;
-			p+=10;
+			p+=50;
 		}
 	}
 		
-	else if(p>a && p > 0 && p-a > 10){
+	else if(p>a && p > 0 && p-a > 50){
 		while(p>a && p > 0) {
-			p-=10;
+			p-=50;
 			commande-=1;
 		}
 	}
@@ -56,16 +36,11 @@ int main(){
 
 	
 	int volumeactuel = 0;
-	int increment = 60;
-	int nbpers=1;
+	int nbpers=5;
 	int seuil_db = 100 * nbpers;
-	//char ip[256];
 	int volumeprecedent=0;
-	//printf("Entrez l'ip de la lampe\n");
-	//scanf("%s",ip);
 	int commande = 1;
 	int commandeprec = 1;
-	//int i =0;
 	//Exit on failure to start communications with the GrovePi
   	if(init()==-1)
     		exit(1);
@@ -86,7 +61,7 @@ int main(){
 		}
 
 		volumeprecedent = value;
-		sleep(10);
+		sleep(5);
 		
 	
 	}	
