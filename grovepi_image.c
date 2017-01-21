@@ -54,13 +54,13 @@ int main(){
 		printf("Sensor value = %d\n", value);
 		commande = definirCouleur(value,volumeprecedent,seuil_db);
 		if (commandeprec != commande && commande>=1){
-			print(commande);
+			printf("%d ",commande);
 			commandeprec = commande;
 			change_image(commande);
 		}
 
 		volumeprecedent = value;
-		sleep(5);
+		sleep(10);
 		
 	
 	}	
