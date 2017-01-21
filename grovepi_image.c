@@ -15,9 +15,9 @@ int definirCouleur(int actu,int prec, int limitH){
 	int p = prec; // le volume enregistré précedemment
 	int a = actu; // Le volume envoyé a l'instant par le capteur
 	int commande = 0; //La commande
-	if(p<a && p < limitH && a-p>50){ //Si le volume precedemment enregistré est inferieur au volume enregistré a l'instant
+	if(p<a && a-p>50){ //Si le volume precedemment enregistré est inferieur au volume enregistré a l'instant
 
-		while(p < a && p < limitH) { //On a 10 images et on fixe la limite du volume a 500mdb. Donc a chaque changement de 50 decibels on change d'image
+		while(p < a ) { //On a 10 images et on fixe la limite du volume a 500mdb. Donc a chaque changement de 50 decibels on change d'image
 			commande+=1;
 			p+=50;
 		}
@@ -34,8 +34,6 @@ int definirCouleur(int actu,int prec, int limitH){
 
 int main(){
 
-	
-	int volumeactuel = 0;
 	int nbpers=5;
 	int seuil_db = 100 * nbpers;
 	int volumeprecedent=0;
