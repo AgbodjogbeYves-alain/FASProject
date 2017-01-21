@@ -15,16 +15,16 @@ int definirCouleur(int actu,int prec, int limitH){
 	int p = prec; // le volume enregistré précedemment
 	int a = actu; // Le volume envoyé a l'instant par le capteur
 	int commande = 0; //La commande
-	if(p<a && a-p>50){ //Si le volume precedemment enregistré est inferieur au volume enregistré a l'instant
+	if(p<a && a-p>=limitH/10){ //Si le volume precedemment enregistré est inferieur au volume enregistré a l'instant
 
-		while(p < a ) { //On a 10 images et on fixe la limite du volume a 500mdb. Donc a chaque changement de 50 decibels on change d'image
+		while(p < a && commande<10 ) { //On a 10 images et on fixe la limite du volume a 500mdb. Donc a chaque changement de 50 decibels on change d'image
 			commande+=1;
 			p+=50;
 		}
 	}
 		
-	else if(p>a && p > 0 && p-a > 50){
-		while(p>a && p > 0) {
+	else if(p>a && p > 0 && p-a >limitH/10){
+		while(p>a && p > 0 && commande>0) {
 			p-=50;
 			commande-=1;
 		}
@@ -54,6 +54,7 @@ int main(){
 		printf("Sensor value = %d\n", value);
 		commande = definirCouleur(value,volumeprecedent,seuil_db);
 		if (commandeprec != commande && commande>=1){
+			print(commande);
 			commandeprec = commande;
 			change_image(commande);
 		}
