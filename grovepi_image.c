@@ -12,9 +12,7 @@ void change_image(int commande){
 }
 
 int definirCouleur(int actu){
-	int p = prec; // le volume enregistré précedemment
 	int a = actu; // Le volume envoyé a l'instant par le capteur
-	int commande = 0; //La commande
 	int personne = 50;
 	int seuil_0 = personne;
 	int seuill_1 = personne * 2;
@@ -31,34 +29,34 @@ int definirCouleur(int actu){
 	if(a>seuil_0){
 		return 0;
 	}
-	else if(a>seuil1){
+	else if(a>seuil_1){
 		return 1;
 	}
-	else if(a>seuil2){
+	else if(a>seuil_2){
 		return 2;
 	}
-	else if(a>seuil3){
+	else if(a>seuil_3){
 		return 3;
 	}
-	else if(a>seuil4){
+	else if(a>seuil_4){
 		return 4;
 	}
-	else if(a>seuil5){
+	else if(a>seuil_5){
 		return 5;
 	}
-	else if(a>seuil6){
+	else if(a>seuil_6){
 		return 6;
 	}
-	else if(a>seuil7){
+	else if(a>seuil_7){
 		return 7;
 	}
-	else if(a>seuil8){
+	else if(a>seuil_8){
 		return 8;
 	}
-	else if(a>seuil9){
+	else if(a>seuil_9){
 		return 9;
 	}
-	else if(a>seuil10){
+	else if(a>seuil_10){
 		return 10;
 	}
 }
