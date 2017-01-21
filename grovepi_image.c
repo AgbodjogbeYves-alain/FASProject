@@ -72,6 +72,7 @@ int main(){
   	int PIN = 1;
   	pinMode(PIN,0);
   	int value;
+  	change_image(commande);
 	while(1){
 
 		//printf("Entrez le volume sonore ambiant\n");
@@ -82,7 +83,7 @@ int main(){
 		value = analogRead(PIN);
 		printf("Sensor value = %d\n", value);
 		commande = definirCouleur(value,volumeprecedent,seuil_db);
-		if (commandeprec != commande){
+		if (commandeprec != commande and commande>=1){
 			change_image(commande);
 		}
 
