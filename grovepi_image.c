@@ -9,7 +9,7 @@ int commande;
 
 void change_image(int commande){
 	char new_image[256];
-	sprintf(new_image,"eog --fullscreen imageColor_%d.png &",commande);
+	sprintf(new_image," nohup eog --fullscreen imageColor_%d.png &",commande);
 	system(new_image);
 
 }
@@ -74,7 +74,6 @@ int main(){
 	scanf("%d",&volumeprecedent);
 	commande = definirCouleur(volumeactuel,volumeprecedent,seuil_db);
 	change_image(commande);
-	main();
 		/*while(1){
 			printf("Entrez le volume sonore ambiant\n"); // a remplacer pr les valeurs du capteur sonore ou du nombre de personne * 50
 			scanf("%d",&db);
