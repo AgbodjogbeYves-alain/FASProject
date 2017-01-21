@@ -2,10 +2,6 @@
 #include <stdlib.h>
 #include <unistd.h> /* close */
 #include <netdb.h> /* gethostbyname */
-int seuil_db = 500;
-int volumeactuel;
-int volumeprecedent;
-int commande;
 
 void change_image(int commande){
 	char new_image[256];
@@ -38,15 +34,15 @@ int definirCouleur(int actu,int prec, int limitH){
 	int p = prec; // le volume enregistré précedemment
 	int a = actu; // Le volume envoyé a l'instant par le capteur
 	int commande = 0; //La commande
-	if(p<a && p < limitH){ //Si le volume precedemment enregistré est inferieur au volume enregistré a l'instant
+	if(p<a && p < limitH && a-p>200){ //Si le volume precedemment enregistré est inferieur au volume enregistré a l'instant
 
 		while(p < a && p < limitH) { //On a 10 images et on fixe la limite du volume a 500mdb. Donc a chaque changement de 50 decibels on change d'image
 			commande+=1;
-			p+=50;
+			p+=200;
 		}
 	}
 		
-	else if(p>a && p > 0){
+	else if(p>a && p > 0 && p-a > 200){
 		while(p>a && p > 0) {
 			p-=50;
 			commande-=1;
@@ -57,25 +53,39 @@ int definirCouleur(int actu,int prec, int limitH){
 
 int main(){
 
-	//int seuil_db = 500;
-	//int volumeactuel = 0;
-	//int volumepers = 50;
-	//int increment = 60;
-	//int nbpers=0;
+	int seuil_db = 25 * 100;
+	int volumeactuel = 0;
+	int increment = 60;
+	int nbpers=25;
 	//char ip[256];
-	//int volumeprecedent=0;
+	int volumeprecedent=0;
 	//printf("Entrez l'ip de la lampe\n");
 	//scanf("%s",ip);
-	//int commande = 0;
+	int commande = 1;
+	int commandeprec = 0;
 	//int i =0;
+	//Exit on failure to start communications with the GrovePi
+  	if(init()==-1)
+    		exit(1);
+    // Capteur de son sur le port A0 en lecture
+  	int PIN = 1;
+  	pinMode(PIN,0);
 	while(1){
-		printf("Entrez le volume sonore ambiant\n");
-		scanf("%d",&volumeactuel);
-		printf("Entrez le volume precedent de la salle\n");
-		scanf("%d",&volumeprecedent);
-		commande = definirCouleur(volumeactuel,volumeprecedent,seuil_db);
-		change_image(commande);
-		printf("fait");
+
+		//printf("Entrez le volume sonore ambiant\n");
+		//scanf("%d",&volumeactuel);
+		//printf("Entrez le volume precedent de la salle\n");
+		//scanf("%d",&volumeprecedent);
+		commandeprec = commande;
+		value = analogRead(PIN);
+		printf("Sensor value = %d\n", value);
+		commande = definirCouleur(value,volumeprecedent,seuil_db);
+		if (commandeprec != commande){
+			change_image(commande);
+		}
+		
+		volumeprecedent = value;
+		
 	
 	}	
 		
