@@ -68,6 +68,7 @@ int main(){
 	//scanf("%s",ip);
 	//int commande = 0;
 	//int i =0;
+	while(1){
 		printf("Entrez le volume sonore ambiant\n");
 		scanf("%d",&volumeactuel);
 		printf("Entrez le volume precedent de la salle\n");
@@ -76,6 +77,8 @@ int main(){
 		change_image(commande);
 		printf("fait");
 	
+	}	
+		
 		/*while(1){
 			printf("Entrez le volume sonore ambiant\n"); // a remplacer pr les valeurs du capteur sonore ou du nombre de personne * 50
 			scanf("%d",&db);
