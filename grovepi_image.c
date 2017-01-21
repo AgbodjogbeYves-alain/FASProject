@@ -30,34 +30,34 @@ int definirCouleur(int actu){
 	if(a>seuil_0){
 		numImage = 0;
 	}
-	else if(a>seuil_1){
+	if(a>seuil_1){
 		numImage = 1;
 	}
-	else if(a>seuil_2){
+	if(a>seuil_2){
 		numImage = 2;
 	}
-	else if(a>seuil_3){
+	if(a>seuil_3){
 		numImage = 3;
 	}
-	else if(a>seuil_4){
+	if(a>seuil_4){
 		numImage = 4;
 	}
-	else if(a>seuil_5){
+	if(a>seuil_5){
 		numImage = 5;
 	}
-	else if(a>seuil_6){
+	if(a>seuil_6){
 		numImage = 6;
 	}
-	else if(a>seuil_7){
+	if(a>seuil_7){
 		numImage = 7;
 	}
-	else if(a>seuil_8){
+	if(a>seuil_8){
 		numImage = 8;
 	}
-	else if(a>seuil_9){
+	if(a>seuil_9){
 		numImage = 9;
 	}
-	else if(a>seuil_10){
+	if(a>seuil_10){
 		numImage = 10;
 	}
 	return numImage;
@@ -81,7 +81,10 @@ int main(){
 		value = analogRead(PIN);
 		printf("Sensor value = %d\n", value);
 		commande = definirCouleur(value);
-		change_image(commande);
+		if (commandeprec != commande){
+			commandeprec = commande;
+			change_image(commande);
+		}
 		sleep(5);
 		
 	
