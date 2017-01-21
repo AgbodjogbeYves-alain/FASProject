@@ -54,10 +54,11 @@ int definirCouleur(int actu,int prec, int limitH){
 
 int main(){
 
-	int seuil_db = 25 * 100;
+	
 	int volumeactuel = 0;
 	int increment = 60;
 	int nbpers=25;
+	int seuil_db = 25 * nbpers;
 	//char ip[256];
 	int volumeprecedent=0;
 	//printf("Entrez l'ip de la lampe\n");
