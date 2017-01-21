@@ -80,7 +80,7 @@ int main(){
 		value = analogRead(PIN);
 		printf("Sensor value = %d\n", value);
 		commande = definirCouleur(value,volumeprecedent,seuil_db);
-		if (commandeprec != commande and commande>=1){
+		if (commandeprec != commande && commande>=1){
 			commandeprec = commande;
 			change_image(commande);
 		}
