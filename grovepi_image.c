@@ -75,7 +75,7 @@ int main(){
   	int value;
   	change_image(1);
   	sleep(5);
-	/*while(1){
+	while(1){
 
 		//printf("Entrez le volume sonore ambiant\n");
 		//scanf("%d",&volumeactuel);
@@ -93,7 +93,7 @@ int main(){
 		sleep(10);
 		
 	
-	}*/	
+	}	
 		
 		/*while(1){
 			printf("Entrez le volume sonore ambiant\n"); // a remplacer pr les valeurs du capteur sonore ou du nombre de personne * 50
