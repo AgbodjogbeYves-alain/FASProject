@@ -87,7 +87,7 @@ int main(){
 		}
 
 		volumeprecedent = value;
-		sleep(5);
+		sleep(10);
 		
 	
 	}	
