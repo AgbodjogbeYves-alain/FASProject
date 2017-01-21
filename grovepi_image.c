@@ -15,16 +15,16 @@ int definirCouleur(int actu){
 	int a = actu; // Le volume envoyé a l'instant par le capteur
 	int personne = 50;
 	int seuil_0 = personne;
-	int seuill_1 = personne * 2;
-	int seuill_2 = personne * 4;
-	int seuill_3 = personne * 6;
-	int seuill_4 = personne * 8;
-	int seuill_5 = personne * 10;
-	int seuill_6 = personne * 12;
-	int seuill_7 = personne * 14;
-	int seuill_8 = personne * 16;
-	int seuill_9 = personne * 18;
-	int seuill_10 = personne * 20;
+	int seuil_1 = personne * 2;
+	int seuil_2 = personne * 4;
+	int seuil_3 = personne * 6;
+	int seuil_4 = personne * 8;
+	int seuil_5 = personne * 10;
+	int seuil_6 = personne * 12;
+	int seuil_7 = personne * 14;
+	int seuil_8 = personne * 16;
+	int seuil_9 = personne * 18;
+	int seuil_10 = personne * 20;
 
 	if(a>seuil_0){
 		return 0;
