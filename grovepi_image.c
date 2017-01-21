@@ -2,7 +2,10 @@
 #include <stdlib.h>
 #include <unistd.h> /* close */
 #include <netdb.h> /* gethostbyname */
-
+int seuil_db = 500;
+int volumeactuel;
+int volumeprecedent;
+int commande;
 
 void change_image(int commande){
 	char new_image[256];
@@ -54,24 +57,24 @@ int definirCouleur(int actu,int prec, int limitH){
 
 int main(){
 
-	int seuil_db = 500;
-	int volumeactuel = 0;
+	//int seuil_db = 500;
+	//int volumeactuel = 0;
 	//int volumepers = 50;
-	int increment = 60;
+	//int increment = 60;
 	//int nbpers=0;
-	char ip[256];
-	int volumeprecedent=0;
+	//char ip[256];
+	//int volumeprecedent=0;
 	//printf("Entrez l'ip de la lampe\n");
 	//scanf("%s",ip);
-	int commande = 0;
-	int i =0;
-	while(1){
-		printf("Entrez le volume sonore ambiant\n");
-		scanf("%d",&volumeactuel);
-		printf("Entrez le volume precedent de la salle\n");
-		scanf("%d",&volumeprecedent);
-		commande = definirCouleur(volumeactuel,volumeprecedent,seuil_db);
-		change_image(commande);
+	//int commande = 0;
+	//int i =0;
+	printf("Entrez le volume sonore ambiant\n");
+	scanf("%d",&volumeactuel);
+	printf("Entrez le volume precedent de la salle\n");
+	scanf("%d",&volumeprecedent);
+	commande = definirCouleur(volumeactuel,volumeprecedent,seuil_db);
+	change_image(commande);
+	int man = main();
 		/*while(1){
 			printf("Entrez le volume sonore ambiant\n"); // a remplacer pr les valeurs du capteur sonore ou du nombre de personne * 50
 			scanf("%d",&db);
@@ -113,7 +116,7 @@ int main(){
 
 
 		}*/
-	}
+	//}
 	return 0;
 	
 }
