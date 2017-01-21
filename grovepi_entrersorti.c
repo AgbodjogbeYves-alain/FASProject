@@ -42,7 +42,7 @@ int main(void)
 	  
 	  if (data1 < distance)
 	  {	
-		pi_sleep(500);
+		pi_sleep(100);
 		data1=distance;
 		write_block(us_cmd,PIN2,0,0);
 		pi_sleep(200);
@@ -58,14 +58,14 @@ int main(void)
 	  		printf("Une personne vient de rentrer\n");
 			printf("Nombre de personne : %d\n",nbpersonne);
 	  		data2=distance;
-			pi_sleep(500);
+			pi_sleep(100);
 
 	  	}
 	  	else
 	  	{
 	  		printf("la personne a fait demi tour avant d'entrer\n");
 		//	printf("demi tour, data1 =%d et data2 = %d",data1,data2);
-			pi_sleep(500);
+			pi_sleep(100);
 	  	}
 	  }
 	
@@ -80,30 +80,30 @@ int main(void)
 
 	if (data2 < distance)
           {
-                pi_sleep(500);
-		data2=distance;
+                pi_sleep(100);
+				data2=distance;
                 write_block(us_cmd,PIN1,0,0);
-		pi_sleep(200);
+				pi_sleep(200);
                 read_byte();
                 read_block();
                 data1=r_buf[1]*256 + r_buf[2];
 		
 
                 if(data1 < distance)
-                {       nbpersonne=nbpersonne-1;
-                        
-			printf("data1 = %d",data1);
-			printf("data2 = %d",data2);
-                        printf("Une personne vient de sortir\n");
-                        printf("Nombre de personne : %d\n",nbpersonne);
-                        data1=distance;
-			pi_sleep(500);
+                {       
+                	nbpersonne=nbpersonne-1;        
+					printf("data1 = %d \n",data1);
+					printf("data2 = %d \n",data2);
+                    printf("Une personne vient de sortir\n");
+                    printf("Nombre de personne : %d\n",nbpersonne);
+                    data1=distance;
+					pi_sleep(100);
 
                 }
                 else
                 {
-			 printf("la personne a fait demi tour avant de sortir \n");
-                         pi_sleep(500);
+			 		printf("la personne a fait demi tour avant de sortir \n");
+                    pi_sleep(100);
                 }
           }
 	 
