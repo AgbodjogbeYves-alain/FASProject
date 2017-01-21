@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h> /* close */
 #include <netdb.h> /* gethostbyname */
+#include "grovepi.h"
 
 void change_image(int commande){
 	char new_image[256];
@@ -83,7 +84,7 @@ int main(){
 		if (commandeprec != commande){
 			change_image(commande);
 		}
-		
+
 		volumeprecedent = value;
 		
 	
