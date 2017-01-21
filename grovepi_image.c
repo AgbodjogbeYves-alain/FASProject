@@ -35,17 +35,17 @@ int definirCouleur(int actu,int prec, int limitH){
 	int p = prec; // le volume enregistré précedemment
 	int a = actu; // Le volume envoyé a l'instant par le capteur
 	int commande = 0; //La commande
-	if(p<a && p < limitH && a-p>200){ //Si le volume precedemment enregistré est inferieur au volume enregistré a l'instant
+	if(p<a && p < limitH && a-p>10){ //Si le volume precedemment enregistré est inferieur au volume enregistré a l'instant
 
 		while(p < a && p < limitH) { //On a 10 images et on fixe la limite du volume a 500mdb. Donc a chaque changement de 50 decibels on change d'image
 			commande+=1;
-			p+=200;
+			p+=10;
 		}
 	}
 		
-	else if(p>a && p > 0 && p-a > 200){
+	else if(p>a && p > 0 && p-a > 10){
 		while(p>a && p > 0) {
-			p-=50;
+			p-=10;
 			commande-=1;
 		}
 	}
@@ -57,8 +57,8 @@ int main(){
 	
 	int volumeactuel = 0;
 	int increment = 60;
-	int nbpers=25;
-	int seuil_db = 25 * nbpers;
+	int nbpers=1;
+	int seuil_db = 100 * nbpers;
 	//char ip[256];
 	int volumeprecedent=0;
 	//printf("Entrez l'ip de la lampe\n");
