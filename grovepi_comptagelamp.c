@@ -46,6 +46,7 @@ int main(void)
 	sprintf(set_on,"yee --ip=%s turn on",ip);
 	system(set_on);
 	sprintf(new_color,"yee --ip=%s hsv %d 100",ip,increment);
+	system(new_color);
 
 	while(1) // boucle infinie
 	{
@@ -78,7 +79,7 @@ int main(void)
 	  		if(data2 < distance)
 	  		{	
 	  			nbpersonne=nbpersonne+1;
-	  			increment -=1/3;
+	  			increment -=3;
 				change_color(increment,0,ip);
 	  			printf("Une personne vient de rentrer\n");
 				printf("Nombre de personne : %d\n",nbpersonne);
@@ -115,7 +116,7 @@ int main(void)
                 if(data1 < distance)
                 {       
                 	nbpersonne=nbpersonne-1;
-                	increment +=1/3;
+                	increment +=3;
 					change_color(increment,1,ip);        
                	    printf("Une personne vient de sortir\n");
                     printf("Nombre de personne : %d\n",nbpersonne);
