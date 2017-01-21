@@ -77,6 +77,7 @@ int main(){
   	sleep(5);
 	while(1){
 
+
 		//printf("Entrez le volume sonore ambiant\n");
 		//scanf("%d",&volumeactuel);
 		//printf("Entrez le volume precedent de la salle\n");
