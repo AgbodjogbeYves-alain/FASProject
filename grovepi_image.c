@@ -64,7 +64,7 @@ int main(){
 	//printf("Entrez l'ip de la lampe\n");
 	//scanf("%s",ip);
 	int commande = 1;
-	int commandeprec = 0;
+	int commandeprec = 1;
 	//int i =0;
 	//Exit on failure to start communications with the GrovePi
   	if(init()==-1)
@@ -73,18 +73,19 @@ int main(){
   	int PIN = 1;
   	pinMode(PIN,0);
   	int value;
-  	change_image(commande);
-	while(1){
+  	change_image(1);
+  	sleep(5);
+	/*while(1){
 
 		//printf("Entrez le volume sonore ambiant\n");
 		//scanf("%d",&volumeactuel);
 		//printf("Entrez le volume precedent de la salle\n");
 		//scanf("%d",&volumeprecedent);
-		commandeprec = commande;
 		value = analogRead(PIN);
 		printf("Sensor value = %d\n", value);
 		commande = definirCouleur(value,volumeprecedent,seuil_db);
 		if (commandeprec != commande and commande>=1){
+			commandeprec = commande;
 			change_image(commande);
 		}
 
@@ -92,7 +93,7 @@ int main(){
 		sleep(10);
 		
 	
-	}	
+	}*/	
 		
 		/*while(1){
 			printf("Entrez le volume sonore ambiant\n"); // a remplacer pr les valeurs du capteur sonore ou du nombre de personne * 50
