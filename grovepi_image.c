@@ -89,6 +89,6 @@ int main(){
 		
 	
 	}	
-	numImage = 0;
+	return 0;
 	
 }
