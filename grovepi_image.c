@@ -71,6 +71,7 @@ int main(){
     // Capteur de son sur le port A0 en lecture
   	int PIN = 1;
   	pinMode(PIN,0);
+  	int value;
 	while(1){
 
 		//printf("Entrez le volume sonore ambiant\n");
