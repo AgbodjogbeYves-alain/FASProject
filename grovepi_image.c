@@ -74,7 +74,7 @@ int main(){
 	scanf("%d",&volumeprecedent);
 	commande = definirCouleur(volumeactuel,volumeprecedent,seuil_db);
 	change_image(commande);
-	int man = main();
+	main();
 		/*while(1){
 			printf("Entrez le volume sonore ambiant\n"); // a remplacer pr les valeurs du capteur sonore ou du nombre de personne * 50
 			scanf("%d",&db);
