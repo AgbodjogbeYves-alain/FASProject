@@ -73,7 +73,8 @@ int main(){
   	int PIN = 1;
   	pinMode(PIN,0);
   	int value;
-  	change_image(commande);
+  	change_image(1);
+	sleep(5);
 	while(1){
 
 		//printf("Entrez le volume sonore ambiant\n");
