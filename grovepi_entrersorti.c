@@ -11,8 +11,8 @@ int main(void)
 	if(init()==-1)
 		exit(1);
 	
-	int PIN1 = 5;
-	int PIN2 = 4;// Capteur branché sur le port D4 (digital 4)
+	int PIN1 = 2;
+	int PIN2 = 3;// Capteur branché sur le port D4 (digital 4)
 
 	
 	int distance = 50;
