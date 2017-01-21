@@ -23,7 +23,7 @@ int definirCouleur(int actu,int prec, int limitH){
 		}
 	}
 		
-	else if(p>a && p > 0 && p-a >limitH/10){
+	else if(p>=a && p-a>limitH/10){
 		while(p>a && p > 0 && commande>0) {
 			p-=50;
 			commande-=1;
@@ -60,7 +60,7 @@ int main(){
 		}
 
 		volumeprecedent = value;
-		sleep(10);
+		sleep(5);
 		
 	
 	}	
