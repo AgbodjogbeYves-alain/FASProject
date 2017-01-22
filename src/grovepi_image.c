@@ -6,7 +6,7 @@
 
 void change_image(int commande){
 	char new_image[256];
-	sprintf(new_image," nohup eog --fullscreen imageColor_%d.png &",commande);
+	sprintf(new_image," nohup eog --fullscreen ../image/imageColor_%d.png &",commande);
 	system(new_image);
 
 }
