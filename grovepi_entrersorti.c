@@ -36,7 +36,8 @@ int main(void)
 	   //>>>> detection d'un individu entre le capteur et le mur d'en face  
 	  if (data1 < distance)
 	  {	
-
+		
+		// Attente 100ms avant d'effectuer la lecture du deuxieme capteur
 		pi_sleep(100);
 		data1=distance;
 		write_block(us_cmd,PIN2,0,0);
