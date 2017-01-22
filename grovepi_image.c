@@ -85,7 +85,7 @@ int main(){
 			commandeprec = commande;
 			change_image(commande);
 		}
-		sleep(5);
+		sleep(2);
 		
 	
 	}	
